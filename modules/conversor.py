@@ -10,6 +10,7 @@ class Conversor:
         
      
     def convert(self, input_file: str, width: int, height: int, rate: int, name_out: str, out_format: str):
+        """Main function for transcode video"""
         stream = ffmpeg.input(input_file)
         stream = ffmpeg.output(stream, name_out + out_format,vcodec="libsvtav1", strict="-2", video_bitrate='2M', crf= 40)
         
