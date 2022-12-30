@@ -93,13 +93,13 @@ fullscreen = 0
 #icon.adaptive_background.filename = %(source.dir)s/data/icon_bg.png
 
 # (list) Permissions
-#android.permissions = INTERNET
+android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-#android.api = 27
+android.api = 30
 
 # (int) Minimum API your APK / AAB will support.
 #android.minapi = 21
@@ -178,7 +178,7 @@ fullscreen = 0
 #android.add_src =
 
 # (list) Android AAR archives to add
-#android.add_aars = ffmpeg.aar
+android.add_aars = ffmpeg.aar
 
 # (list) Put these files or directories in the apk assets directory.
 # Either form may be used, and assets need not be in 'source.include_exts'.
