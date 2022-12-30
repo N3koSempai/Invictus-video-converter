@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3==3.11,kivy==2.1.0,Pillow,kivyMD==1.1.1
+requirements = python3,kivy==2.1.0,Pillow,kivymd==1.1.1,ffmpeg-python==0.2.0
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -178,7 +178,7 @@ fullscreen = 0
 #android.add_src =
 
 # (list) Android AAR archives to add
-android.add_aars = ffmpeg.aar
+#android.add_aars = ffmpeg.aar
 
 # (list) Put these files or directories in the apk assets directory.
 # Either form may be used, and assets need not be in 'source.include_exts'.
