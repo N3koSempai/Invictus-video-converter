@@ -93,13 +93,13 @@ fullscreen = 0
 #icon.adaptive_background.filename = %(source.dir)s/data/icon_bg.png
 
 # (list) Permissions
-android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
+#android.permissions = (READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE)
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-android.api = 30
+#android.api = 30
 
 # (int) Minimum API your APK / AAB will support.
 #android.minapi = 21
