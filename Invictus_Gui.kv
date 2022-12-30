@@ -5,7 +5,23 @@ MDScreenManager:
         name: 'smain'
         
         MDBoxLayout:
-            pos_hint: {"center_x": 0.5, "center_y": 0.7}
+            adaptive_height: True
+
+            adaptive_width: False
+            md_bg_color: app.theme_cls.primary_color
+            pos_hint: {"center_x": 0.5, "center_y": 0.95}
             MDLabel:
-                text: 'Create a new account'
+                text: 'Welcome to Invictus video Convert'
                 halign: 'center'
+                valign: 'top'
+
+        MDBoxLayout:
+            adaptive_height: True
+
+            adaptive_width: True
+            pos_hint: {"center_x": 0.5, "center_y": 0.3}
+
+            MDFlatButton:
+                text: "Select your file for convert"
+                pos_hint: {'center_x': .5, 'center_y': .5}
+                on_release: app.file_manage()

@@ -1,8 +1,11 @@
 from modules.conversor import Conversor
-import sys
+import os
+from kivy.core.window import Window
 from kivy.lang import Builder
 from kivymd.app import MDApp
+from kivymd.uix.filemanager import MDFileManager
 from kivymd.uix.label import MDLabel
+
 from kivymd.uix.screenmanager import MDScreenManager
 from kivy import _version
 
@@ -10,7 +13,13 @@ from kivy import _version
 
 class Invictus_app(MDApp):
     """main class for the kiviMD GUI"""
-    
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        Window.bind(on_keyboard=self.events)
+        self.manager_open = False
+        self.file_manager = MDFileManager(
+            exit_manager=self.exit_manager, select_path=self.select_path
+            )
     
     def build(self):
         
@@ -18,6 +27,31 @@ class Invictus_app(MDApp):
         Gui = Builder.load_file('./Invictus_Gui.kv')
         
         return Gui
+        
+    def file_manage(self):
+        self.file_manager.show(os.path.expanduser("~"))
+        self.manager_open = True
+
+
+
+
+    def select_path(self, path: str):
+        conv = Conversor()
+        name_out = 'demo_out'
+        out_format = '.avi'
+        self.exit_manager()
+        conv.convert(path,700, 1200, 5000, name_out, out_format)
+        
+
+    def exit_manager(self, *args):
+        self.manager_open = False
+        self.file_manager.close()
+
+
+
+
+
+
 
 Invictus_app().run()
 
@@ -33,7 +67,7 @@ Invictus_app().run()
 #`text = metadata.exportDictionary()
 #print(text['Metadata']['Duration'])
 
-#conv = Conversor()
+
 
 #conv.convert(input_file,700, 1200, 5000, name_out, out_format)
 
