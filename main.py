@@ -1,10 +1,19 @@
-from modules.conversor import Conversor
+#from modules.conversor import Conversor
 import os
 from kivy.core.window import Window
 from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivymd.uix.filemanager import MDFileManager
 from kivymd.uix.label import MDLabel
+from kivy import platform
+#if platform == "android":
+#    from android.permissions import request_permissions, Permission
+#    request_permissions([Permission.WRITE_EXTERNAL_STORAGE, 
+#   Permission.READ_EXTERNAL_STORAGE])
+
+
+
+
 
 from kivymd.uix.screenmanager import MDScreenManager
 from kivy import _version
@@ -36,11 +45,11 @@ class Invictus_app(MDApp):
 
 
     def select_path(self, path: str):
-        conv = Conversor()
+        #conv = Conversor()
         name_out = 'demo_out'
         out_format = '.avi'
         self.exit_manager()
-        conv.convert(path,700, 1200, 5000, name_out, out_format)
+        #conv.convert(path,700, 1200, 5000, name_out, out_format)
         
 
     def exit_manager(self, *args):
